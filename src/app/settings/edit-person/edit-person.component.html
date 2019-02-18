@@ -1,0 +1,19 @@
+<form [formGroup]="personForm" (ngSubmit)="createPerson()">
+  <div fxLayout="row">
+    <mat-form-field hintLabel="Maximum 100 caractères">
+      <input matInput #lastName maxlength="100" placeholder="Nom" formControlName="lastName">
+      <mat-hint align="end">{{lastName.value?.length || 0}}/10</mat-hint>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row">
+    <mat-form-field hintLabel="Maximum 100 caractères">
+      <input matInput #firstName maxlength="100" placeholder="Prénom" formControlName="firstName">
+      <mat-hint align="end">{{firstName.value?.length || 0}}/10</mat-hint>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row">
+    <button type="submit" mat-button mat-raised-button color="primary">
+      SAUVER
+    </button>
+  </div>
+</form>
